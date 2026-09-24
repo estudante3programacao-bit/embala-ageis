@@ -44,17 +44,75 @@ body {
     color: #1e9b48;
 }
 
-.logo {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
+#logo-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background: white;
+
+    z-index: 9999;
+
+    animation: desaparecer 3s ease-in-out forwards;
 }
 
-.logo img {
+#logo-principal img {
     width: 250px;
     max-width: 80%;
-    height: auto;
+
+    animation: expandir 3s ease-in-out forwards;
+}
+
+
+/* Aumenta a logo */
+@keyframes expandir {
+
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    20% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+
+}
+
+
+/* Desaparece a tela da logo */
+@keyframes desaparecer {
+
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
 }
 
 nav {
