@@ -1,993 +1,119 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Embala-Ágeis EPP — embalagens, copos, descartáveis, higiene, limpeza e soluções para comércio em Brasília.">
-
-    <title>Embala-Ágeis | Embalagens em Brasília</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
+    <meta name="description" content="Embala-Ágeis EPP — embalagens, higiene, limpeza e soluções para o comércio.">
+    <title>Embala-Ágeis | Embalagens que movem seu negócio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-    <!-- BOTÃO DE ACESSIBILIDADE -->
-    <button
-        class="accessibility"
-        id="accessibilityBtn"
-        title="Acessibilidade">
-        ◉
-    </button>
+    <header class="topo">
+        <a href="#inicio" class="logo">Embala<span>-Ágeis</span></a>
 
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
 
-    <!-- =========================
-         CABEÇALHO
-    ========================== -->
-
-    <header class="header" id="inicio">
-
-        <div class="container nav">
-
-            <a href="#inicio" class="logo">
-
-                <span class="logo-icon">✦</span>
-
-                <span>
-                    <strong>
-                        Embala-<b>Ágeis</b>
-                    </strong>
-
-                    <small>
-                        EMBALAGEM QUE MOVE SEU NEGÓCIO
-                    </small>
-                </span>
-
-            </a>
-
-
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Abrir menu">
-
-                ☰
-
-            </button>
-
-
-            <nav id="mainNav">
-
-                <a href="#inicio">
-                    ⌂ Início
-                </a>
-
-                <a href="#produtos">
-                    Produtos
-                </a>
-
-                <a href="#sobre">
-                    Sobre Nós
-                </a>
-
-                <a href="#contato">
-                    Contato
-                </a>
-
-                <a
-                    class="nav-cta"
-                    href="#contato">
-
-                    ◉ Fale Conosco
-
-                </a>
-
-            </nav>
-
-        </div>
-
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Soluções</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
 
-
-
     <main>
-
-
-        <!-- =========================
-             HERO
-        ========================== -->
-
-        <section class="hero">
-
-            <div class="hero-overlay"></div>
-
-
-            <div class="container hero-content">
-
-
-                <!-- TEXTO -->
-
-                <div class="hero-text">
-
-                    <span class="eyebrow">
-                        SUA EMBALAGEM,
-                    </span>
-
-
-                    <h1>
-
-                        CHEGA MAIS RÁPIDO
-                        <br>
-
-                        <span>
-                            COM A EMBALA-ÁGEIS!
-                        </span>
-
-                    </h1>
-
-
-                    <p>
-
-                        Embalagens de qualidade,
-                        praticidade e agilidade
-                        para o seu negócio.
-
-                    </p>
-
-
-                    <div class="hero-features">
-
-                        <div>
-
-                            <span>◷</span>
-
-                            <strong>
-                                Entrega
-                                <br>
-                                Rápida
-                            </strong>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>✓</span>
-
-                            <strong>
-                                Qualidade
-                                <br>
-                                Garantida
-                            </strong>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>▣</span>
-
-                            <strong>
-                                Atendimento
-                                <br>
-                                Personalizado
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        class="hero-button"
-                        href="#produtos">
-
-                        Conheça nossos produtos →
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- VAN -->
-
-                <div
-                    class="van-scene"
-                    id="vanScene"
-                    title="Clique na van">
-
-                    <div class="sun"></div>
-
-                    <div class="city city-a"></div>
-
-                    <div class="city city-b"></div>
-
-                    <div class="bridge bridge-a"></div>
-
-
-                    <div class="van">
-
-                        <div class="van-light left"></div>
-
-                        <div class="van-light right"></div>
-
-
-                        <div class="van-body">
-
-
-                            <div class="windshield"></div>
-
-                            <div class="window"></div>
-
-                            <div class="door-line"></div>
-
-
-                            <div class="van-brand">
-
-                                Embala-<b>Ágeis</b>
-
-                            </div>
-
-
-                            <div class="van-slogan">
-
-                                EMBALAGEM QUE MOVE SEU NEGÓCIO
-
-                            </div>
-
-
-                            <div class="green-stripe"></div>
-
-
-                            <div class="van-wheel wheel-a"></div>
-
-                            <div class="van-wheel wheel-b"></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="road"></div>
-
-
-                    <div class="click-hint">
-
-                        🔊 Clique na van:
-                        luzes + buzina + música
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             BENEFÍCIOS
-        ========================== -->
-
-        <section class="benefits">
-
-            <div class="container benefits-grid">
-
-
-                <div>
-
-                    <span>◷</span>
-
-                    <strong>
-                        Entrega rápida
-                    </strong>
-
-                    <small>
-                        Agilidade para seu negócio
-                    </small>
-
-                </div>
-
-
-                <div>
-
-                    <span>✓</span>
-
-                    <strong>
-                        Qualidade garantida
-                    </strong>
-
-                    <small>
-                        Produtos selecionados
-                    </small>
-
-                </div>
-
-
-                <div>
-
-                    <span>▣</span>
-
-                    <strong>
-                        Atendimento
-                    </strong>
-
-                    <small>
-                        Suporte personalizado
-                    </small>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             PRODUTOS
-        ========================== -->
-
-        <section
-            class="products-section"
-            id="produtos">
-
-            <div class="container">
-
-
-                <div class="section-heading">
-
-                    <span>▧</span>
-
-                    <div>
-
-                        <h2>
-                            Nossos Produtos
-                        </h2>
-
-                        <p>
-                            Tudo o que você precisa
-                            em um só lugar
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="product-grid">
-
-
-                    <!-- PRODUTO 1 -->
-
-                    <article
-                        class="product-card"
-                        data-category="Copos">
-
-                        <div class="product-image cups">
-
-                            <div class="cup cup-1"></div>
-
-                            <div class="cup cup-2"></div>
-
-                            <div class="cup cup-3"></div>
-
-                        </div>
-
-
-                        <h3>
-                            Copos e Descartáveis
-                        </h3>
-
-                        <p>
-                            Copos, tampas,
-                            potes e muito mais.
-                        </p>
-
-
-                        <button class="product-btn">
-                            Ver produtos →
-                        </button>
-
-                    </article>
-
-
-
-                    <!-- PRODUTO 2 -->
-
-                    <article
-                        class="product-card"
-                        data-category="Alimentos">
-
-                        <div class="product-image food">
-
-                            <div class="food-box"></div>
-
-                            <div class="food-piece"></div>
-
-                            <div class="food-piece two"></div>
-
-                        </div>
-
-
-                        <h3>
-                            Embalagens para Alimentos
-                        </h3>
-
-                        <p>
-                            Praticidade e segurança
-                            para seus alimentos.
-                        </p>
-
-
-                        <button class="product-btn">
-                            Ver produtos →
-                        </button>
-
-                    </article>
-
-
-
-                    <!-- PRODUTO 3 -->
-
-                    <article
-                        class="product-card"
-                        data-category="Higiene">
-
-                        <div class="product-image cleaning">
-
-                            <div
-                                class="bottle bottle-blue">
-                            </div>
-
-                            <div
-                                class="bottle bottle-green">
-                            </div>
-
-                            <div class="spray"></div>
-
-                        </div>
-
-
-                        <h3>
-                            Higiene e Limpeza
-                        </h3>
-
-                        <p>
-                            Mais higiene para
-                            o seu dia a dia.
-                        </p>
-
-
-                        <button class="product-btn">
-                            Ver produtos →
-                        </button>
-
-                    </article>
-
-
-
-                    <!-- PRODUTO 4 -->
-
-                    <article
-                        class="product-card"
-                        data-category="Papelão">
-
-                        <div class="product-image boxes">
-
-                            <div class="box box-a"></div>
-
-                            <div class="box box-b"></div>
-
-                        </div>
-
-
-                        <h3>
-                            Embalagens de Papelão
-                        </h3>
-
-                        <p>
-                            Resistência e proteção
-                            para seu negócio.
-                        </p>
-
-
-                        <button class="product-btn">
-                            Ver produtos →
-                        </button>
-
-                    </article>
-
-
-
-                    <!-- PRODUTO 5 -->
-
-                    <article
-                        class="product-card"
-                        data-category="Comércio">
-
-                        <div class="product-image commerce">
-
-                            <div class="bag bag-a"></div>
-
-                            <div class="bag bag-b"></div>
-
-                            <div class="bag bag-c"></div>
-
-                        </div>
-
-
-                        <h3>
-                            Soluções para Comércio
-                        </h3>
-
-                        <p>
-                            Do pequeno ao
-                            grande negócio.
-                        </p>
-
-
-                        <button class="product-btn">
-                            Ver produtos →
-                        </button>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             SOBRE
-        ========================== -->
-
-        <section
-            class="about"
-            id="sobre">
-
-            <div class="container about-grid">
-
-
-                <div>
-
-                    <span class="section-tag">
-                        SOBRE A EMPRESA
-                    </span>
-
-
-                    <h2>
-                        Embalagens que ajudam
-                        seu negócio a crescer.
-                    </h2>
-
-
-                    <p>
-
-                        A Embala-Ágeis EPP oferece
-                        soluções para empresas que
-                        precisam de praticidade,
-                        qualidade e atendimento próximo.
-
-                    </p>
-
-
-                    <div class="stats">
-
-                        <div>
-
-                            <strong>
-                                +500
-                            </strong>
-
-                            <span>
-                                produtos
-                            </span>
-
-                        </div>
-
-
-                        <div>
-
-                            <strong>
-                                DF
-                            </strong>
-
-                            <span>
-                                atendimento local
-                            </span>
-
-                        </div>
-
-
-                        <div>
-
-                            <strong>
-                                Ágil
-                            </strong>
-
-                            <span>
-                                atendimento
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="about-card">
-
-                    <div class="package-icon">
-                        📦
-                    </div>
-
-
-                    <h3>
-                        Uma solução completa
-                    </h3>
-
-
-                    <p>
-
-                        Copos, embalagens,
-                        produtos de higiene,
-                        papelão e itens
-                        para comércio.
-
-                    </p>
-
-
-                    <a href="#contato">
-
-                        Falar com a equipe →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             PAGAMENTO
-        ========================== -->
-
-        <section class="payment">
-
-            <div class="container payment-content">
-
-
-                <div class="payment-title">
-
-                    <span>
-                        ▣
-                    </span>
-
-                    <strong>
-                        Compre com segurança
-                    </strong>
-
-                </div>
-
-
-                <div class="cards">
-
-                    <span>
-                        VISA
-                    </span>
-
-                    <span>
-                        mastercard
-                    </span>
-
-                    <span>
-                        elo
-                    </span>
-
-                    <span>
-                        HIPER
-                    </span>
-
-                    <span>
-                        PIX
-                    </span>
-
-                </div>
-
-
-                <small>
-                    Pagamento seguro e conveniente.
-                </small>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             CONTATO
-        ========================== -->
-
-        <section
-            class="contact"
-            id="contato">
-
-            <div class="container contact-grid">
-
-
-                <div>
-
-                    <span class="section-tag">
-                        FALE CONOSCO
-                    </span>
-
-
-                    <h2>
-                        Precisa de embalagens?
-                    </h2>
-
-
-                    <p>
-                        Envie uma mensagem e fale
-                        com nossa equipe.
-                    </p>
-
-
-                    <div class="contact-info">
-
-                        <p>
-                            📍 Brasília – DF
-                        </p>
-
-                        <p>
-                            📞 (61) 0000-0000
-                        </p>
-
-                        <p>
-                            ✉ contato@embalaageis.com.br
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <form
-                    id="contactForm"
-                    class="contact-form">
-
-
-                    <label>
-
-                        Nome
-
-                        <input
-                            id="nome"
-                            type="text"
-                            placeholder="Seu nome"
-                            required>
-
-                    </label>
-
-
-                    <label>
-
-                        WhatsApp
-
-                        <input
-                            id="telefone"
-                            type="tel"
-                            placeholder="(61) 99999-9999"
-                            required>
-
-                    </label>
-
-
-                    <label>
-
-                        Mensagem
-
-                        <textarea
-                            id="mensagem"
-                            rows="4"
-                            placeholder="Quais produtos você procura?"
-                            required></textarea>
-
-                    </label>
-
-
-                    <button type="submit">
-
-                        Enviar pelo WhatsApp →
-
-                    </button>
-
-
-                    <small id="formMessage"></small>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================
-         RODAPÉ
-    ========================== -->
-
-    <footer class="footer">
-
-        <div class="container footer-grid">
-
-
-            <div class="footer-logo">
-
-                <div class="logo">
-
-                    <span class="logo-icon">
-                        ✦
-                    </span>
-
-                    <span>
-
-                        <strong>
-                            Embala-<b>Ágeis</b>
-                        </strong>
-
-                        <small>
-                            EMBALAGEM QUE MOVE
-                            SEU NEGÓCIO
-                        </small>
-
-                    </span>
-
-                </div>
-
-
-                <p>
-                    Qualidade • Agilidade •
-                    Seu negócio em movimento
+        <section id="inicio" class="hero">
+            <div class="hero-text">
+                <p class="etiqueta">SOLUÇÕES PARA O SEU COMÉRCIO</p>
+                <h1>Embalagens que <span>movem</span> seu negócio.</h1>
+                <p class="descricao">
+                    Produtos para embalagem, higiene, limpeza e soluções para
+                    estabelecimentos comerciais.
                 </p>
 
+                <div class="botoes">
+                    <a class="btn principal" href="#servicos">Conheça nossas soluções</a>
+                    <a class="btn secundario" href="#contato">Fale conosco</a>
+                </div>
             </div>
 
+            <div class="carro-area" id="carroArea" title="Clique no carro">
+                <div class="brilho"></div>
+                <img src="carro.png" alt="Veículo da Embala-Ágeis" id="carro">
+                <div class="clique-carro">Clique no carro 🚐</div>
+            </div>
+        </section>
 
+        <section id="sobre" class="secao sobre">
+            <div>
+                <p class="etiqueta">EMBALA-ÁGEIS EPP</p>
+                <h2>Uma solução para o seu negócio</h2>
+            </div>
+            <p>
+                A Embala-Ágeis trabalha com produtos e soluções pensados para
+                facilitar a rotina de empresas, comércios e profissionais.
+                Navegue pelo site e conheça nossas categorias.
+            </p>
+        </section>
 
-            <div class="footer-company">
+        <section id="servicos" class="secao">
+            <p class="etiqueta">NOSSAS SOLUÇÕES</p>
+            <h2>O que podemos oferecer</h2>
 
-                <strong>
-                    Embala-Ágeis EPP
-                </strong>
+            <div class="cards">
+                <article class="card">
+                    <div class="icone">📦</div>
+                    <h3>Embalagens</h3>
+                    <p>Opções para armazenamento, transporte e apresentação dos seus produtos.</p>
+                </article>
 
-                <span>
-                    Brasília – DF
-                </span>
+                <article class="card">
+                    <div class="icone">🧹</div>
+                    <h3>Higiene e limpeza</h3>
+                    <p>Produtos para manter ambientes comerciais limpos e organizados.</p>
+                </article>
 
+                <article class="card">
+                    <div class="icone">🏪</div>
+                    <h3>Soluções comerciais</h3>
+                    <p>Itens pensados para facilitar o dia a dia do seu estabelecimento.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="secao contato">
+            <div>
+                <p class="etiqueta">ENTRE EM CONTATO</p>
+                <h2>Vamos conversar?</h2>
+                <p>Preencha o formulário e deixe sua mensagem.</p>
             </div>
 
+            <form id="formContato">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
 
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="seu@email.com" required>
 
-            <div class="socials">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5"
+                    placeholder="Como podemos ajudar?" required></textarea>
 
-                <a href="#" aria-label="WhatsApp">
-                    ◉
-                </a>
+                <button class="btn principal" type="submit">Enviar mensagem</button>
+                <p id="mensagemForm" class="mensagem-form"></p>
+            </form>
+        </section>
+    </main>
 
-                <a href="#" aria-label="Instagram">
-                    ◎
-                </a>
-
-                <a href="#" aria-label="Facebook">
-                    f
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="container copyright">
-
-            ©
-
-            <span id="year"></span>
-
-            Embala-Ágeis EPP.
-            Todos os direitos reservados.
-
-        </div>
-
+    <footer>
+        <strong>Embala-Ágeis EPP</strong>
+        <span>Embalagens que movem seu negócio.</span>
+        <span>© <span id="ano"></span> — Todos os direitos reservados.</span>
     </footer>
 
-
-
-    <!-- =========================
-         MODAL DOS PRODUTOS
-    ========================== -->
-
-    <div
-        class="modal"
-        id="productModal"
-        aria-hidden="true">
-
-
-        <div class="modal-box">
-
-
-            <button
-                class="modal-close"
-                id="modalClose">
-
-                ×
-
-            </button>
-
-
-            <span class="section-tag">
-                CATÁLOGO
-            </span>
-
-
-            <h2 id="modalTitle">
-                Produtos
-            </h2>
-
-
-            <p id="modalText"></p>
-
-
-            <div
-                class="modal-items"
-                id="modalItems">
-            </div>
-
-
-            <a
-                href="#contato"
-                class="hero-button modal-contact"
-                id="modalContact">
-
-                Solicitar orçamento
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-
-    <script src="script.js"></script>
+    <div class="notificacao" id="notificacao" role="status"></div>
 
 </body>
-
 </html>
