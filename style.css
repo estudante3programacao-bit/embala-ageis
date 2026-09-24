@@ -44,7 +44,7 @@ body {
     color: #1e9b48;
 }
 
-#logo-principal {
+#logo {
     position: fixed;
     top: 0;
     left: 0;
@@ -63,7 +63,7 @@ body {
     animation: desaparecer 3s ease-in-out forwards;
 }
 
-#logo-principal img {
+#logo img {
     width: 250px;
     max-width: 80%;
 
