@@ -1,394 +1,993 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Embala-Ágeis</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{
-  --verde-1:#F0FBD8; --verde-2:#8BE04A; --verde-3:#4CAF2E; --verde-4:#2E7D1F;
-  --coral:#FF5B3D; --coral-2:#FF8A65;
-  --turquesa:#1FC8C0; --turquesa-2:#0FA39B;
-  --amarelo:#FFC93C;
-  --bg:#FBFAF5; --texto:#1E2A1B; --muted:#6E7A63;
-}
-:root:not([data-theme="light"]){ }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){ --bg:#101A12; --texto:#EAF3E1; --muted:#9BAA8E; }
-}
-:root[data-theme="dark"]{ --bg:#101A12; --texto:#EAF3E1; --muted:#9BAA8E; }
-:root{ box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
-html{ scroll-padding-top:env(safe-area-inset-top,0px); }
-*{box-sizing:border-box;}
-body{margin:0;background:var(--bg);color:var(--texto);font-family:'Poppins',sans-serif;}
-a{text-decoration:none;color:inherit;}
-header{
-  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
-  background:linear-gradient(135deg,var(--verde-4),var(--verde-3));
-  color:#fff; padding:14px 20px; display:flex; align-items:center; justify-content:space-between;
-  box-shadow:0 4px 14px rgba(0,0,0,0.12);
-}
-.logo{
-  font-weight:900;font-size:1.3rem;letter-spacing:0.5px;
-  background:linear-gradient(90deg,#fff,var(--amarelo),#fff,var(--turquesa),#fff);
-  background-size:300% auto;
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  animation:shimmer 4s linear infinite;
-}
-.logo span{color:var(--coral-2); -webkit-text-fill-color:var(--coral-2);}
-@keyframes shimmer{
-  0%{background-position:0% center;}
-  100%{background-position:300% center;}
-}
-.hero h1{
-  background:linear-gradient(90deg,var(--verde-4),var(--turquesa-2),var(--coral),var(--verde-4));
-  background-size:300% auto;
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  animation:shimmer 6s linear infinite;
-}
-.cart-btn{
-  background:var(--coral); color:#fff; border:none; border-radius:999px;
-  padding:10px 16px; font-weight:700; font-size:0.9rem; cursor:pointer;
-  display:flex; align-items:center; gap:6px;
-  box-shadow:0 0 0 0 rgba(255,91,61,0.5);
-  animation:pulseCart 2.2s ease-in-out infinite;
-}
-@keyframes pulseCart{
-  0%,100%{box-shadow:0 0 0 0 rgba(255,91,61,0.45);}
-  50%{box-shadow:0 0 0 8px rgba(255,91,61,0);}
-}
-.running-cart{
-  position:fixed; top:64px; left:-80px; font-size:2.2rem; z-index:50;
-  animation:runCart 1.8s cubic-bezier(.2,.7,.3,1) forwards;
-  pointer-events:none;
-}
-@keyframes runCart{
-  0%{left:-80px; transform:scaleX(1) rotate(0deg);}
-  92%{left:100%; transform:scaleX(1) rotate(-6deg);}
-  100%{left:110%; opacity:0;}
-}
-.hero{
-  padding:40px 20px; text-align:center;
-  background:radial-gradient(ellipse at 50% 0%, rgba(169,214,107,0.25), transparent 70%);
-}
-.hero h1{font-size:clamp(1.6rem,5vw,2.4rem); margin:0 0 8px 0; font-weight:800;}
-.hero p{color:var(--muted); max-width:520px; margin:0 auto; font-size:1rem;}
-main{max-width:1080px; margin:0 auto; padding:20px;}
-.grid{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-top:10px;
-}
-.card{
-  background:#fff; border-radius:18px; padding:18px; box-shadow:0 6px 20px rgba(60,90,40,0.1);
-  display:flex; flex-direction:column; gap:8px;
-}
-@media (prefers-color-scheme: dark){ .card{ background:#182417; } }
-:root[data-theme="dark"] .card{ background:#182417; }
-.icon-box{
-  height:110px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-  transition:transform .2s;
-}
-.card:hover .icon-box{transform:scale(1.05) rotate(-1deg);}
-.icon-box.c1{background:linear-gradient(160deg,var(--verde-1),var(--verde-2));}
-.icon-box.c2{background:linear-gradient(160deg,#FFE0B2,var(--coral-2));}
-.icon-box.c3{background:linear-gradient(160deg,#B2F3F0,var(--turquesa));}
-.icon-box.c4{background:linear-gradient(160deg,#FFF3C4,var(--amarelo));}
-.card h3{margin:4px 0 0 0; font-size:1.05rem;}
-.card .desc{color:var(--muted); font-size:0.85rem; flex-grow:1;}
-.price{
-  font-weight:800; font-size:1.2rem; color:var(--verde-4);
-  animation:priceBounce 2.6s ease-in-out infinite;
-  display:inline-block; width:fit-content;
-}
-@keyframes priceBounce{
-  0%,100%{transform:translateY(0); text-shadow:0 0 0 rgba(76,175,46,0);}
-  50%{transform:translateY(-3px); text-shadow:0 2px 10px rgba(76,175,46,0.35);}
-}
-@media (prefers-color-scheme: dark){ .price{color:var(--verde-2);} }
-:root[data-theme="dark"] .price{color:var(--verde-2);}
-.add-btn{
-  background:var(--verde-3); color:#fff; border:none; border-radius:10px; padding:10px;
-  font-weight:700; cursor:pointer; font-size:0.9rem; transition:transform .12s;
-  box-shadow:0 0 8px 1px rgba(255,201,60,0.6), 0 0 0 0 rgba(139,224,74,0.5);
-  animation:glowAdd 1.8s ease-in-out infinite;
-}
-.add-btn:active{transform:scale(0.97);}
-@keyframes glowAdd{
-  0%,100%{box-shadow:0 0 6px 1px rgba(255,201,60,0.5);}
-  50%{box-shadow:0 0 16px 4px rgba(255,201,60,0.85);}
-}
-.qty-select{padding:8px; border-radius:8px; border:1px solid #ddd; font-family:inherit;}
+    <meta charset="UTF-8">
 
-/* Carrinho lateral */
-.overlay{
-  position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:30; display:none;
-}
-.overlay.open{display:block;}
-.drawer{
-  position:fixed; top:0; right:0; height:100%; width:min(380px,92vw);
-  background:var(--bg); z-index:31; transform:translateX(100%); transition:transform .25s ease;
-  padding:20px; padding-top:calc(20px + env(safe-area-inset-top,0px));
-  display:flex; flex-direction:column; box-shadow:-8px 0 24px rgba(0,0,0,0.15);
-}
-.drawer.open{transform:translateX(0);}
-.drawer h2{margin-top:0;}
-.close-btn{position:absolute; top:calc(16px + env(safe-area-inset-top,0px)); right:16px; background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--texto);}
-#cart-items{flex-grow:1; overflow-y:auto; margin:10px 0;}
-.cart-row{display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid rgba(0,0,0,0.08); gap:8px;}
-.cart-row .rname{font-size:0.9rem; font-weight:600;}
-.cart-row .rsub{font-size:0.78rem; color:var(--muted);}
-.remove-btn{background:none;border:none;color:var(--coral);cursor:pointer;font-size:0.8rem;font-weight:700;}
-.cart-total{display:flex; justify-content:space-between; font-weight:800; font-size:1.1rem; padding:12px 0; border-top:2px solid var(--verde-3);}
-.checkout-btn{
-  background:var(--coral); color:#fff; border:none; border-radius:12px; padding:14px;
-  font-weight:800; font-size:1rem; cursor:pointer; margin-top:6px;
-}
-.empty-msg{color:var(--muted); text-align:center; margin-top:30px; font-size:0.9rem;}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Checkout modal */
-.modal-overlay{
-  position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:40; display:none;
-  align-items:center; justify-content:center; padding:16px;
-}
-.modal-overlay.open{display:flex;}
-.modal{
-  background:var(--bg); border-radius:18px; padding:22px; width:100%; max-width:420px;
-  max-height:88vh; overflow-y:auto; position:relative;
-}
-.modal h2{margin-top:0;}
-.field{margin-bottom:12px;}
-.field label{display:block; font-size:0.82rem; font-weight:600; margin-bottom:5px; color:var(--muted);}
-.field input{
-  width:100%; padding:11px 12px; border-radius:9px; border:1px solid #d7dccb; font-family:inherit; font-size:0.95rem;
-}
-.row2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
-.pay-btn{
-  width:100%; background:linear-gradient(135deg,var(--verde-3),var(--verde-4)); color:#fff; border:none;
-  border-radius:12px; padding:14px; font-weight:800; font-size:1rem; cursor:pointer; margin-top:6px;
-}
-.success{text-align:center; padding:10px 0;}
-.success .check{
-  width:64px; height:64px; border-radius:50%; background:var(--verde-2); display:flex; align-items:center;
-  justify-content:center; margin:0 auto 14px auto; font-size:2rem; color:#fff;
-}
-footer{text-align:center; padding:34px 20px 40px 20px; color:var(--muted); font-size:0.85rem;}
-.pay-badges{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin:14px 0;}
-.pay-badge{
-  background:#fff; border:1px solid #e2e6d8; border-radius:8px; padding:6px 12px;
-  font-weight:800; font-size:0.78rem; color:var(--texto);
-}
-@media (prefers-color-scheme: dark){ .pay-badge{background:#182417; border-color:#2b3a24;} }
-:root[data-theme="dark"] .pay-badge{background:#182417; border-color:#2b3a24;}
-.phone-line{
-  font-weight:700; font-size:0.95rem; color:var(--texto); margin-top:8px;
-}
-</style>
+    <meta name="description"
+        content="Embala-Ágeis EPP — embalagens, copos, descartáveis, higiene, limpeza e soluções para comércio em Brasília.">
+
+    <title>Embala-Ágeis | Embalagens em Brasília</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <div class="logo">EMBALA<span>-ÁGEIS</span></div>
-  <button class="cart-btn" onclick="openCart()">🛒 Carrinho (<span id="cart-count">0</span>)</button>
-</header>
+    <!-- BOTÃO DE ACESSIBILIDADE -->
+    <button
+        class="accessibility"
+        id="accessibilityBtn"
+        title="Acessibilidade">
+        ◉
+    </button>
 
-<div class="hero">
-  <h1><img src="emba.png"><h1>
-  <h1>Embalagens que movem seu negócio</h1>
-  <p>Recicláveis e biodegradáveis, prontas para o seu restaurante, lanchonete ou fast food. Compre online, com entrega rápida.</p>
-</div>
 
-<main>
-  <div class="grid" id="product-grid"></div>
-</main>
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
-<footer>
-  <div>Aceitamos as principais bandeiras de cartão e Pix</div>
-  <div class="pay-badges">
-    <span class="pay-badge">Visa</span>
-    <span class="pay-badge">Mastercard</span>
-    <span class="pay-badge">Elo</span>
-    <span class="pay-badge">American Express</span>
-    <span class="pay-badge">Pix</span>
-  </div>
-  <div class="phone-line">📞 Fale conosco: (61) 4002-8922</div>
-  <div style="margin-top:10px;">© 2026 Embala-Ágeis — Embalagens recicláveis e biodegradáveis para o seu negócio.</div>
-</footer>
+    <header class="header" id="inicio">
 
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
-<div class="drawer" id="drawer">
-  <button class="close-btn" onclick="closeCart()">✕</button>
-  <h2>Seu carrinho</h2>
-  <div id="cart-items"></div>
-  <div id="cart-footer"></div>
-</div>
+        <div class="container nav">
 
-<div class="modal-overlay" id="checkout-overlay">
-  <div class="modal" id="checkout-modal"></div>
-</div>
+            <a href="#inicio" class="logo">
 
-<script>
-const produtos = [
-  {id:1, nome:"Copo Biodegradável 300ml", desc:"Pacote com 100 unidades, ideal para bebidas quentes e frias.", preco:39.90, emoji:"🥤"},
-  {id:2, nome:"Kit Talheres Descartáveis", desc:"Garfo, faca e colher compostáveis — pacote com 100 kits.", preco:32.50, emoji:"🍴"},
-  {id:3, nome:"Pote para Marmita Reciclável", desc:"Fechamento hermético, ideal para delivery — pacote com 50un.", preco:54.90, emoji:"🥡"},
-  {id:4, nome:"Sacola Kraft Biodegradável", desc:"Reforçada, com alça — pacote com 100 unidades.", preco:28.00, emoji:"🛍️"},
-  {id:5, nome:"Canudo de Papel", desc:"Resistente e compostável — pacote com 200 unidades.", preco:14.90, emoji:"🥤"},
-  {id:6, nome:"Guardanapo Reciclado", desc:"Pacote econômico com 500 folhas — 100% papel reciclado.", preco:19.90, emoji:"🧻"},
-];
+                <span class="logo-icon">✦</span>
 
-let cart = {};
-try{
-  const saved = localStorage.getItem('embala-cart');
-  if(saved) cart = JSON.parse(saved);
-}catch(e){ cart = {}; }
+                <span>
+                    <strong>
+                        Embala-<b>Ágeis</b>
+                    </strong>
 
-function saveCart(){
-  try{ localStorage.setItem('embala-cart', JSON.stringify(cart)); }catch(e){}
-}
+                    <small>
+                        EMBALAGEM QUE MOVE SEU NEGÓCIO
+                    </small>
+                </span>
 
-function renderProducts(){
-  const grid = document.getElementById('product-grid');
-  const cores = ['c1','c2','c3','c4'];
-  grid.innerHTML = produtos.map((p,i) => `
-    <div class="card">
-      <div class="icon-box ${cores[i%4]}" style="font-size:2.8rem;">${p.emoji}</div>
-      <h3>${p.nome}</h3>
-      <div class="desc">${p.desc}</div>
-      <div class="price">R$ ${p.preco.toFixed(2).replace('.',',')}</div>
-      <div style="display:flex; gap:8px;">
-        <select class="qty-select" id="qty-${p.id}">
-          ${[1,2,3,4,5].map(n=>`<option value="${n}">${n}</option>`).join('')}
-        </select>
-        <button class="add-btn" style="flex-grow:1;" onclick="addToCart(${p.id})">Adicionar</button>
-      </div>
+            </a>
+
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Abrir menu">
+
+                ☰
+
+            </button>
+
+
+            <nav id="mainNav">
+
+                <a href="#inicio">
+                    ⌂ Início
+                </a>
+
+                <a href="#produtos">
+                    Produtos
+                </a>
+
+                <a href="#sobre">
+                    Sobre Nós
+                </a>
+
+                <a href="#contato">
+                    Contato
+                </a>
+
+                <a
+                    class="nav-cta"
+                    href="#contato">
+
+                    ◉ Fale Conosco
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="container hero-content">
+
+
+                <!-- TEXTO -->
+
+                <div class="hero-text">
+
+                    <span class="eyebrow">
+                        SUA EMBALAGEM,
+                    </span>
+
+
+                    <h1>
+
+                        CHEGA MAIS RÁPIDO
+                        <br>
+
+                        <span>
+                            COM A EMBALA-ÁGEIS!
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Embalagens de qualidade,
+                        praticidade e agilidade
+                        para o seu negócio.
+
+                    </p>
+
+
+                    <div class="hero-features">
+
+                        <div>
+
+                            <span>◷</span>
+
+                            <strong>
+                                Entrega
+                                <br>
+                                Rápida
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <strong>
+                                Qualidade
+                                <br>
+                                Garantida
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>▣</span>
+
+                            <strong>
+                                Atendimento
+                                <br>
+                                Personalizado
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="hero-button"
+                        href="#produtos">
+
+                        Conheça nossos produtos →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- VAN -->
+
+                <div
+                    class="van-scene"
+                    id="vanScene"
+                    title="Clique na van">
+
+                    <div class="sun"></div>
+
+                    <div class="city city-a"></div>
+
+                    <div class="city city-b"></div>
+
+                    <div class="bridge bridge-a"></div>
+
+
+                    <div class="van">
+
+                        <div class="van-light left"></div>
+
+                        <div class="van-light right"></div>
+
+
+                        <div class="van-body">
+
+
+                            <div class="windshield"></div>
+
+                            <div class="window"></div>
+
+                            <div class="door-line"></div>
+
+
+                            <div class="van-brand">
+
+                                Embala-<b>Ágeis</b>
+
+                            </div>
+
+
+                            <div class="van-slogan">
+
+                                EMBALAGEM QUE MOVE SEU NEGÓCIO
+
+                            </div>
+
+
+                            <div class="green-stripe"></div>
+
+
+                            <div class="van-wheel wheel-a"></div>
+
+                            <div class="van-wheel wheel-b"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="road"></div>
+
+
+                    <div class="click-hint">
+
+                        🔊 Clique na van:
+                        luzes + buzina + música
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             BENEFÍCIOS
+        ========================== -->
+
+        <section class="benefits">
+
+            <div class="container benefits-grid">
+
+
+                <div>
+
+                    <span>◷</span>
+
+                    <strong>
+                        Entrega rápida
+                    </strong>
+
+                    <small>
+                        Agilidade para seu negócio
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>✓</span>
+
+                    <strong>
+                        Qualidade garantida
+                    </strong>
+
+                    <small>
+                        Produtos selecionados
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>▣</span>
+
+                    <strong>
+                        Atendimento
+                    </strong>
+
+                    <small>
+                        Suporte personalizado
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PRODUTOS
+        ========================== -->
+
+        <section
+            class="products-section"
+            id="produtos">
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <span>▧</span>
+
+                    <div>
+
+                        <h2>
+                            Nossos Produtos
+                        </h2>
+
+                        <p>
+                            Tudo o que você precisa
+                            em um só lugar
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="product-grid">
+
+
+                    <!-- PRODUTO 1 -->
+
+                    <article
+                        class="product-card"
+                        data-category="Copos">
+
+                        <div class="product-image cups">
+
+                            <div class="cup cup-1"></div>
+
+                            <div class="cup cup-2"></div>
+
+                            <div class="cup cup-3"></div>
+
+                        </div>
+
+
+                        <h3>
+                            Copos e Descartáveis
+                        </h3>
+
+                        <p>
+                            Copos, tampas,
+                            potes e muito mais.
+                        </p>
+
+
+                        <button class="product-btn">
+                            Ver produtos →
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PRODUTO 2 -->
+
+                    <article
+                        class="product-card"
+                        data-category="Alimentos">
+
+                        <div class="product-image food">
+
+                            <div class="food-box"></div>
+
+                            <div class="food-piece"></div>
+
+                            <div class="food-piece two"></div>
+
+                        </div>
+
+
+                        <h3>
+                            Embalagens para Alimentos
+                        </h3>
+
+                        <p>
+                            Praticidade e segurança
+                            para seus alimentos.
+                        </p>
+
+
+                        <button class="product-btn">
+                            Ver produtos →
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PRODUTO 3 -->
+
+                    <article
+                        class="product-card"
+                        data-category="Higiene">
+
+                        <div class="product-image cleaning">
+
+                            <div
+                                class="bottle bottle-blue">
+                            </div>
+
+                            <div
+                                class="bottle bottle-green">
+                            </div>
+
+                            <div class="spray"></div>
+
+                        </div>
+
+
+                        <h3>
+                            Higiene e Limpeza
+                        </h3>
+
+                        <p>
+                            Mais higiene para
+                            o seu dia a dia.
+                        </p>
+
+
+                        <button class="product-btn">
+                            Ver produtos →
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PRODUTO 4 -->
+
+                    <article
+                        class="product-card"
+                        data-category="Papelão">
+
+                        <div class="product-image boxes">
+
+                            <div class="box box-a"></div>
+
+                            <div class="box box-b"></div>
+
+                        </div>
+
+
+                        <h3>
+                            Embalagens de Papelão
+                        </h3>
+
+                        <p>
+                            Resistência e proteção
+                            para seu negócio.
+                        </p>
+
+
+                        <button class="product-btn">
+                            Ver produtos →
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PRODUTO 5 -->
+
+                    <article
+                        class="product-card"
+                        data-category="Comércio">
+
+                        <div class="product-image commerce">
+
+                            <div class="bag bag-a"></div>
+
+                            <div class="bag bag-b"></div>
+
+                            <div class="bag bag-c"></div>
+
+                        </div>
+
+
+                        <h3>
+                            Soluções para Comércio
+                        </h3>
+
+                        <p>
+                            Do pequeno ao
+                            grande negócio.
+                        </p>
+
+
+                        <button class="product-btn">
+                            Ver produtos →
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
+
+        <section
+            class="about"
+            id="sobre">
+
+            <div class="container about-grid">
+
+
+                <div>
+
+                    <span class="section-tag">
+                        SOBRE A EMPRESA
+                    </span>
+
+
+                    <h2>
+                        Embalagens que ajudam
+                        seu negócio a crescer.
+                    </h2>
+
+
+                    <p>
+
+                        A Embala-Ágeis EPP oferece
+                        soluções para empresas que
+                        precisam de praticidade,
+                        qualidade e atendimento próximo.
+
+                    </p>
+
+
+                    <div class="stats">
+
+                        <div>
+
+                            <strong>
+                                +500
+                            </strong>
+
+                            <span>
+                                produtos
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                DF
+                            </strong>
+
+                            <span>
+                                atendimento local
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Ágil
+                            </strong>
+
+                            <span>
+                                atendimento
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-card">
+
+                    <div class="package-icon">
+                        📦
+                    </div>
+
+
+                    <h3>
+                        Uma solução completa
+                    </h3>
+
+
+                    <p>
+
+                        Copos, embalagens,
+                        produtos de higiene,
+                        papelão e itens
+                        para comércio.
+
+                    </p>
+
+
+                    <a href="#contato">
+
+                        Falar com a equipe →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PAGAMENTO
+        ========================== -->
+
+        <section class="payment">
+
+            <div class="container payment-content">
+
+
+                <div class="payment-title">
+
+                    <span>
+                        ▣
+                    </span>
+
+                    <strong>
+                        Compre com segurança
+                    </strong>
+
+                </div>
+
+
+                <div class="cards">
+
+                    <span>
+                        VISA
+                    </span>
+
+                    <span>
+                        mastercard
+                    </span>
+
+                    <span>
+                        elo
+                    </span>
+
+                    <span>
+                        HIPER
+                    </span>
+
+                    <span>
+                        PIX
+                    </span>
+
+                </div>
+
+
+                <small>
+                    Pagamento seguro e conveniente.
+                </small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTATO
+        ========================== -->
+
+        <section
+            class="contact"
+            id="contato">
+
+            <div class="container contact-grid">
+
+
+                <div>
+
+                    <span class="section-tag">
+                        FALE CONOSCO
+                    </span>
+
+
+                    <h2>
+                        Precisa de embalagens?
+                    </h2>
+
+
+                    <p>
+                        Envie uma mensagem e fale
+                        com nossa equipe.
+                    </p>
+
+
+                    <div class="contact-info">
+
+                        <p>
+                            📍 Brasília – DF
+                        </p>
+
+                        <p>
+                            📞 (61) 0000-0000
+                        </p>
+
+                        <p>
+                            ✉ contato@embalaageis.com.br
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <form
+                    id="contactForm"
+                    class="contact-form">
+
+
+                    <label>
+
+                        Nome
+
+                        <input
+                            id="nome"
+                            type="text"
+                            placeholder="Seu nome"
+                            required>
+
+                    </label>
+
+
+                    <label>
+
+                        WhatsApp
+
+                        <input
+                            id="telefone"
+                            type="tel"
+                            placeholder="(61) 99999-9999"
+                            required>
+
+                    </label>
+
+
+                    <label>
+
+                        Mensagem
+
+                        <textarea
+                            id="mensagem"
+                            rows="4"
+                            placeholder="Quais produtos você procura?"
+                            required></textarea>
+
+                    </label>
+
+
+                    <button type="submit">
+
+                        Enviar pelo WhatsApp →
+
+                    </button>
+
+
+                    <small id="formMessage"></small>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-logo">
+
+                <div class="logo">
+
+                    <span class="logo-icon">
+                        ✦
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Embala-<b>Ágeis</b>
+                        </strong>
+
+                        <small>
+                            EMBALAGEM QUE MOVE
+                            SEU NEGÓCIO
+                        </small>
+
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Qualidade • Agilidade •
+                    Seu negócio em movimento
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-company">
+
+                <strong>
+                    Embala-Ágeis EPP
+                </strong>
+
+                <span>
+                    Brasília – DF
+                </span>
+
+            </div>
+
+
+
+            <div class="socials">
+
+                <a href="#" aria-label="WhatsApp">
+                    ◉
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container copyright">
+
+            ©
+
+            <span id="year"></span>
+
+            Embala-Ágeis EPP.
+            Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         MODAL DOS PRODUTOS
+    ========================== -->
+
+    <div
+        class="modal"
+        id="productModal"
+        aria-hidden="true">
+
+
+        <div class="modal-box">
+
+
+            <button
+                class="modal-close"
+                id="modalClose">
+
+                ×
+
+            </button>
+
+
+            <span class="section-tag">
+                CATÁLOGO
+            </span>
+
+
+            <h2 id="modalTitle">
+                Produtos
+            </h2>
+
+
+            <p id="modalText"></p>
+
+
+            <div
+                class="modal-items"
+                id="modalItems">
+            </div>
+
+
+            <a
+                href="#contato"
+                class="hero-button modal-contact"
+                id="modalContact">
+
+                Solicitar orçamento
+
+            </a>
+
+        </div>
+
     </div>
-  `).join('');
-}
 
-function addToCart(id){
-  const qty = parseInt(document.getElementById('qty-'+id).value, 10);
-  cart[id] = (cart[id]||0) + qty;
-  saveCart();
-  updateCartCount();
-  openCart();
-}
 
-function removeFromCart(id){
-  delete cart[id];
-  saveCart();
-  updateCartCount();
-  renderCart();
-}
 
-function updateCartCount(){
-  const total = Object.values(cart).reduce((a,b)=>a+b,0);
-  document.getElementById('cart-count').textContent = total;
-}
+    <script src="script.js"></script>
 
-function cartTotal(){
-  return Object.entries(cart).reduce((sum,[id,qty])=>{
-    const p = produtos.find(x=>x.id==id);
-    return sum + (p ? p.preco*qty : 0);
-  },0);
-}
-
-function renderCart(){
-  const itemsEl = document.getElementById('cart-items');
-  const footerEl = document.getElementById('cart-footer');
-  const entries = Object.entries(cart);
-  if(entries.length===0){
-    itemsEl.innerHTML = '<p class="empty-msg">Seu carrinho está vazio.<br>Adicione produtos para continuar.</p>';
-    footerEl.innerHTML = '';
-    return;
-  }
-  itemsEl.innerHTML = entries.map(([id,qty])=>{
-    const p = produtos.find(x=>x.id==id);
-    if(!p) return '';
-    return `<div class="cart-row">
-      <div>
-        <div class="rname">${p.emoji} ${p.nome}</div>
-        <div class="rsub">${qty} × R$ ${p.preco.toFixed(2).replace('.',',')}</div>
-      </div>
-      <button class="remove-btn" onclick="removeFromCart(${p.id})">remover</button>
-    </div>`;
-  }).join('');
-  footerEl.innerHTML = `
-    <div class="cart-total"><span>Total</span><span>R$ ${cartTotal().toFixed(2).replace('.',',')}</span></div>
-    <button class="checkout-btn" onclick="openCheckout()">Finalizar compra</button>
-  `;
-}
-
-function openCart(){
-  renderCart();
-  document.getElementById('overlay').classList.add('open');
-  document.getElementById('drawer').classList.add('open');
-}
-function closeCart(){
-  document.getElementById('overlay').classList.remove('open');
-  document.getElementById('drawer').classList.remove('open');
-}
-
-function openCheckout(){
-  if(Object.keys(cart).length===0) return;
-  document.getElementById('checkout-modal').innerHTML = `
-    <h2>Finalizar compra</h2>
-    <div class="field"><label>Nome completo</label><input type="text" id="ck-nome" placeholder="Seu nome"></div>
-    <div class="field"><label>E-mail</label><input type="email" id="ck-email" placeholder="voce@email.com"></div>
-    <div class="field"><label>Endereço de entrega</label><input type="text" id="ck-end" placeholder="Rua, número, bairro"></div>
-    <div class="field"><label>Cidade</label><input type="text" id="ck-cidade" placeholder="Brasília"></div>
-    <h3 style="margin-bottom:4px;">Pagamento</h3>
-    <div class="field"><label>Número do cartão</label><input type="text" id="ck-cartao" placeholder="0000 0000 0000 0000" maxlength="19"></div>
-    <div class="row2">
-      <div class="field"><label>Validade</label><input type="text" id="ck-val" placeholder="MM/AA" maxlength="5"></div>
-      <div class="field"><label>CVV</label><input type="text" id="ck-cvv" placeholder="123" maxlength="4"></div>
-    </div>
-    <div class="cart-total" style="border-top:1px solid rgba(0,0,0,0.1);"><span>Total a pagar</span><span>R$ ${cartTotal().toFixed(2).replace('.',',')}</span></div>
-    <button class="pay-btn" onclick="confirmOrder()">Confirmar pagamento</button>
-    <button class="close-btn" style="position:static; display:block; margin:10px auto 0 auto;" onclick="closeCheckout()">Cancelar</button>
-  `;
-  document.getElementById('checkout-overlay').classList.add('open');
-}
-
-function closeCheckout(){
-  document.getElementById('checkout-overlay').classList.remove('open');
-}
-
-function confirmOrder(){
-  const nome = document.getElementById('ck-nome').value.trim();
-  const end = document.getElementById('ck-end').value.trim();
-  const cartao = document.getElementById('ck-cartao').value.trim();
-  if(!nome || !end || !cartao){
-    alert('Preencha nome, endereço e dados do cartão para continuar.');
-    return;
-  }
-  document.getElementById('checkout-modal').innerHTML = `
-    <div class="success">
-      <div class="check">✓</div>
-      <h2>Pedido confirmado!</h2>
-      <p style="color:var(--muted);">Obrigado, ${nome.split(' ')[0]}! Seu pedido foi recebido e será entregue em breve.</p>
-      <button class="pay-btn" onclick="finishOrder()">Concluir</button>
-    </div>
-  `;
-}
-
-function finishOrder(){
-  cart = {};
-  saveCart();
-  updateCartCount();
-  closeCheckout();
-  closeCart();
-}
-
-renderProducts();
-updateCartCount();
-
-window.addEventListener('load', () => {
-  const runner = document.createElement('div');
-  runner.className = 'running-cart';
-  runner.textContent = '🛒💨';
-  document.body.appendChild(runner);
-  setTimeout(() => runner.remove(), 1900);
-});
-</script>
 </body>
+
 </html>
