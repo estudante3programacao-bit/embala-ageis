@@ -44,6 +44,19 @@ body {
     color: #1e9b48;
 }
 
+.logo {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: white;
+}
+
+.logo img {
+    width: 250px;
+    max-width: 80%;
+    height: auto;
+}
+
 nav {
     display: flex;
     gap: 30px;
