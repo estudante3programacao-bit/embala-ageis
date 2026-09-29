@@ -249,8 +249,8 @@ h1 span {
     position: absolute;
     width: 90px;
     height: 90px;
-    right: 15%;
-    top: 57%;
+    right: 30%;
+    top: 70%;
     border-radius: 50%;
     background: rgba(255, 244, 170, .7);
     filter: blur(28px);
