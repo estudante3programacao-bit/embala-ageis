@@ -99,7 +99,7 @@ function buzina() {
 
 
     // Tipo do som
-    oscilador.type = "sawtooth";
+    oscilador.type = "custom";
 
 
     // Frequência inicial
