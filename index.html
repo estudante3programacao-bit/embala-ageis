@@ -1,126 +1,807 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Embala-Ágeis EPP — embalagens e soluções para o comércio.">
+
+    <meta name="description"
+        content="Embala-Ágeis EPP — embalagens e soluções para o comércio.">
+
     <title>Embala-Ágeis | Embalagens que movem seu negócio</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
     <header class="topo">
-        <a href="#inicio" class="logo">Embala<span>-Ágeis</span></a>
-      
-        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+
+        <a href="#inicio" class="logo">
+            Embala<span>-Ágeis</span>
+        </a>
+
+        <button class="menu-btn"
+                id="menuBtn"
+                aria-label="Abrir menu">
+            ☰
+        </button>
 
         <nav id="menu">
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre</a>
-            <a href="#servicos">Soluções</a>
+            <a href="#servicos">Produtos</a>
             <a href="#contato">Contato</a>
         </nav>
+
+        <!-- Botão do carrinho -->
+        <button class="botao-carrinho"
+                id="abrirCarrinho"
+                aria-label="Abrir carrinho">
+
+            🛒
+            <span>Carrinho</span>
+
+            <span class="contador-carrinho"
+                  id="contadorCarrinho">
+                0
+            </span>
+
+        </button>
+
     </header>
 
+
     <main>
-       <section id="logo" class="logo">
-        <img src="emba.png" alt="Logo Embala-Ágeis">
-       </section>
+
+        <!-- =========================
+             LOGO
+        ========================== -->
+
+        <section id="logo" class="logo-imagem">
+
+            <img src="emba.png"
+                 alt="Logo Embala-Ágeis">
+
+        </section>
+
+
+        <!-- =========================
+             INÍCIO / HERO
+        ========================== -->
 
         <section id="inicio" class="hero">
+
             <div class="hero-text">
-                <p class="etiqueta">SOLUÇÕES PARA O SEU COMÉRCIO</p>
-                <h1>Embalagens que <span>movem</span> seu negócio.</h1>
+
+                <p class="etiqueta">
+                    SOLUÇÕES PARA O SEU COMÉRCIO
+                </p>
+
+                <h1>
+                    Embalagens que
+                    <span>movem</span>
+                    seu negócio.
+                </h1>
+
                 <p class="descricao">
                     Produtos para embalagem e soluções para
                     estabelecimentos comerciais.
                 </p>
 
                 <div class="botoes">
-                    <a class="btn principal" href="#servicos">Conheça nossas soluções</a>
-                    <a class="btn secundario" href="#contato">Fale conosco</a>
+
+                    <a class="btn principal"
+                       href="#servicos">
+                        Conheça nossos produtos
+                    </a>
+
+                    <a class="btn secundario"
+                       href="#contato">
+                        Fale conosco
+                    </a>
+
                 </div>
+
             </div>
 
-            <div class="carro-area" id="carroArea" title="Clique no carro">
+
+            <div class="carro-area"
+                 id="carroArea"
+                 title="Clique no carro">
+
                 <div class="brilho"></div>
-                <img src="carro.png" alt="Veículo da Embala-Ágeis" id="carro">
-                <div class="clique-carro">Clique no carro 🚐</div>
+
+                <img src="carro.png"
+                     alt="Veículo da Embala-Ágeis"
+                     id="carro">
+
+                <div class="clique-carro">
+                    Clique no carro 🚐
+                </div>
+
             </div>
+
         </section>
 
-        <section id="sobre" class="secao sobre">
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
+
+        <section id="sobre"
+                 class="secao sobre">
+
             <div>
-                <p class="etiqueta">EMBALA-ÁGEIS EPP</p>
-                <h2>Uma solução para o seu negócio</h2>
+
+                <p class="etiqueta">
+                    EMBALA-ÁGEIS EPP
+                </p>
+
+                <h2>
+                    Uma solução para o seu negócio
+                </h2>
+
             </div>
+
             <p>
-                A Embala-Ágeis trabalha com produtos e soluções pensados para
-                facilitar a rotina de empresas, comércios e profissionais.
-                Navegue pelo site e conheça nossas categorias.
+                A Embala-Ágeis trabalha com produtos e soluções
+                pensados para facilitar a rotina de empresas,
+                comércios e profissionais.
+                Navegue pelo site e conheça nossos produtos.
             </p>
+
         </section>
 
-        <section id="servicos" class="secao">
-            <p class="etiqueta">NOSSOS PRODUTOS</p>
-            <h2>Oferecemos o melhor atendimento e os melhores produtos</h2>
 
-            <div class="cards">
-                <article class="card">
-                    <!--<div class="icone">📦</div>-->
-                    <h3>Embalagens</h3>
-                    <p>Opções para armazenamento, transporte e apresentação dos seus produtos.</p>
-                    <p><img src="copos.png"></p>
+        <!-- =========================
+             PRODUTOS / LOJA
+        ========================== -->
+
+        <section id="servicos"
+                 class="secao loja">
+
+            <p class="etiqueta">
+                NOSSA LOJA
+            </p>
+
+            <h2>
+                Produtos para o seu negócio
+            </h2>
+
+            <p class="subtitulo-loja">
+                Escolha seus produtos, adicione ao carrinho
+                e monte seu pedido.
+            </p>
+
+
+            <!-- GRID DE PRODUTOS -->
+
+            <div class="cards produtos">
+
+
+                <!-- =====================
+                     PRODUTO 1
+                ====================== -->
+
+                <article class="card produto"
+                         data-id="copo-300ml"
+                         data-nome="Copos descartáveis"
+                         data-preco="29.90"
+                         data-imagem="copos.png">
+
+                    <div class="produto-imagem">
+
+                        <img src="copos.png"
+                             alt="Copos descartáveis">
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <h3>
+                            Copos descartáveis
+                        </h3>
+
+                        <p>
+                            Copos para armazenamento,
+                            transporte e apresentação
+                            dos seus produtos.
+                        </p>
+
+                        <div class="produto-preco">
+                            R$ 29,90
+                        </div>
+
+                        <button class="btn adicionar-carrinho"
+                                data-produto="copo-300ml">
+
+                            🛒 Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
                 </article>
 
-                <article class="card">
-                    <!--<div class="icone">🧹</div>-->
-                    <h3>Atendimento de Restaurantes</h3>
-                    <p>Produtos para restaurantes. Opções para atacado com excelentes preços.</p>
-                    <p><img src="canudos.png"></p>
+
+                <!-- =====================
+                     PRODUTO 2
+                ====================== -->
+
+                <article class="card produto"
+                         data-id="canudos"
+                         data-nome="Canudos coloridos"
+                         data-preco="19.90"
+                         data-imagem="canudos.png">
+
+                    <div class="produto-imagem">
+
+                        <img src="canudos.png"
+                             alt="Canudos coloridos">
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <h3>
+                            Canudos coloridos
+                        </h3>
+
+                        <p>
+                            Canudos para restaurantes,
+                            lanchonetes, festas e
+                            estabelecimentos comerciais.
+                        </p>
+
+                        <div class="produto-preco">
+                            R$ 19,90
+                        </div>
+
+                        <button class="btn adicionar-carrinho"
+                                data-produto="canudos">
+
+                            🛒 Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
                 </article>
 
-                <article class="card">
-                   <!--<div class="icone">🏪</div>-->
-                    <h3>Soluções comerciais</h3>
-                    <p>Itens pensados para facilitar o dia a dia do seu estabelecimento.</p>
-                    <p><img src="garfos.png"></p>
+
+                <!-- =====================
+                     PRODUTO 3
+                ====================== -->
+
+                <article class="card produto"
+                         data-id="kit-garfos"
+                         data-nome="Kit de garfos descartáveis"
+                         data-preco="24.90"
+                         data-imagem="garfos.png">
+
+                    <div class="produto-imagem">
+
+                        <img src="garfos.png"
+                             alt="Kit de garfos descartáveis">
+
+                    </div>
+
+                    <div class="produto-info">
+
+                        <h3>
+                            Kit de garfos descartáveis
+                        </h3>
+
+                        <p>
+                            Solução prática para restaurantes,
+                            lanchonetes, eventos e comércio.
+                        </p>
+
+                        <div class="produto-preco">
+                            R$ 24,90
+                        </div>
+
+                        <button class="btn adicionar-carrinho"
+                                data-produto="kit-garfos">
+
+                            🛒 Adicionar ao carrinho
+
+                        </button>
+
+                    </div>
+
                 </article>
+
             </div>
+
         </section>
 
-        <section id="contato" class="secao contato">
+
+        <!-- =========================
+             CARRINHO
+        ========================== -->
+
+        <aside class="carrinho"
+               id="carrinho"
+               aria-hidden="true">
+
+            <div class="carrinho-cabecalho">
+
+                <h2>
+                    🛒 Seu carrinho
+                </h2>
+
+                <button id="fecharCarrinho"
+                        class="fechar-carrinho"
+                        aria-label="Fechar carrinho">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <!-- Produtos serão inseridos pelo JavaScript -->
+
+            <div class="carrinho-itens"
+                 id="carrinhoItens">
+
+                <p class="carrinho-vazio">
+                    Seu carrinho está vazio.
+                </p>
+
+            </div>
+
+
+            <!-- Resumo -->
+
+            <div class="carrinho-resumo">
+
+                <div class="linha-resumo">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="subtotalCarrinho">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+                <div class="linha-resumo">
+
+                    <span>
+                        Frete
+                    </span>
+
+                    <strong id="freteCarrinho">
+                        A calcular
+                    </strong>
+
+                </div>
+
+                <div class="linha-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="totalCarrinho">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Finalização -->
+
+            <button class="btn principal btn-finalizar"
+                    id="finalizarCompra">
+
+                Finalizar compra
+
+            </button>
+
+        </aside>
+
+
+        <!-- Fundo escuro quando o carrinho abrir -->
+
+        <div class="overlay"
+             id="overlay"></div>
+
+
+        <!-- =========================
+             CHECKOUT
+        ========================== -->
+
+        <section id="checkout"
+                 class="secao checkout"
+                 hidden>
+
+            <p class="etiqueta">
+                FINALIZAÇÃO DO PEDIDO
+            </p>
+
+            <h2>
+                Finalize sua compra
+            </h2>
+
+
+            <form id="formCheckout">
+
+
+                <!-- Dados do cliente -->
+
+                <div class="checkout-bloco">
+
+                    <h3>
+                        Seus dados
+                    </h3>
+
+                    <label for="clienteNome">
+                        Nome completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="clienteNome"
+                        name="clienteNome"
+                        placeholder="Digite seu nome"
+                        required>
+
+
+                    <label for="clienteEmail">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="clienteEmail"
+                        name="clienteEmail"
+                        placeholder="seu@email.com"
+                        required>
+
+
+                    <label for="clienteTelefone">
+                        Telefone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="clienteTelefone"
+                        name="clienteTelefone"
+                        placeholder="(00) 00000-0000"
+                        required>
+
+                </div>
+
+
+                <!-- Endereço -->
+
+                <div class="checkout-bloco">
+
+                    <h3>
+                        Endereço de entrega
+                    </h3>
+
+                    <label for="cep">
+                        CEP
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cep"
+                        name="cep"
+                        placeholder="00000-000"
+                        required>
+
+
+                    <label for="endereco">
+                        Endereço
+                    </label>
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        name="endereco"
+                        placeholder="Rua, avenida..."
+                        required>
+
+
+                    <label for="numero">
+                        Número
+                    </label>
+
+                    <input
+                        type="text"
+                        id="numero"
+                        name="numero"
+                        placeholder="Número"
+                        required>
+
+
+                    <label for="cidade">
+                        Cidade
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cidade"
+                        name="cidade"
+                        placeholder="Cidade"
+                        required>
+
+                </div>
+
+
+                <!-- =========================
+                     PAGAMENTO
+                ========================== -->
+
+                <div class="checkout-bloco pagamento">
+
+                    <h3>
+                        Forma de pagamento
+                    </h3>
+
+                    <div class="formas-pagamento">
+
+
+                        <label class="forma-pagamento">
+
+                            <input
+                                type="radio"
+                                name="pagamento"
+                                value="pix"
+                                required>
+
+                            <span>
+                                🟢 Pix
+                            </span>
+
+                        </label>
+
+
+                        <label class="forma-pagamento">
+
+                            <input
+                                type="radio"
+                                name="pagamento"
+                                value="cartao">
+
+                            <span>
+                                💳 Cartão de crédito
+                            </span>
+
+                        </label>
+
+
+                        <label class="forma-pagamento">
+
+                            <input
+                                type="radio"
+                                name="pagamento"
+                                value="debito">
+
+                            <span>
+                                💳 Cartão de débito
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Bandeiras aceitas -->
+
+                    <div class="bandeiras-cartao">
+
+                        <span>
+                            Cartões aceitos:
+                        </span>
+
+                        <div class="bandeiras">
+
+                            <span class="bandeira visa">
+                                VISA
+                            </span>
+
+                            <span class="bandeira mastercard">
+                                Mastercard
+                            </span>
+
+                            <span class="bandeira elo">
+                                ELO
+                            </span>
+
+                            <span class="bandeira hipercard">
+                                Hipercard
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p class="aviso-pagamento">
+
+                        🔒 O pagamento com cartão deverá ser
+                        processado por um serviço de pagamento
+                        seguro. Os dados completos do cartão
+                        não serão armazenados neste site.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Resumo do checkout -->
+
+                <div class="checkout-bloco resumo-checkout">
+
+                    <h3>
+                        Resumo do pedido
+                    </h3>
+
+                    <div id="resumoPedido">
+
+                        <!-- Preenchido pelo JavaScript -->
+
+                    </div>
+
+                    <div class="checkout-total">
+
+                        <span>
+                            Total:
+                        </span>
+
+                        <strong id="totalCheckout">
+                            R$ 0,00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn principal">
+
+                    Confirmar pedido
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             CONTATO
+        ========================== -->
+
+        <section id="contato"
+                 class="secao contato">
+
             <div>
-                <p class="etiqueta">ENTRE EM CONTATO</p>
-                <h2>Vamos conversar?</h2>
-                <p>Preencha o formulário e deixe sua mensagem.</p>
+
+                <p class="etiqueta">
+                    ENTRE EM CONTATO
+                </p>
+
+                <h2>
+                    Vamos conversar?
+                </h2>
+
+                <p>
+                    Preencha o formulário e deixe sua mensagem.
+                </p>
+
             </div>
+
 
             <form id="formContato">
-                <label for="nome">Nome</label>
-                <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
 
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+                <label for="nome">
+                    Nome
+                </label>
 
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="5"
-                    placeholder="Como podemos ajudar?" required></textarea>
+                <input
+                    id="nome"
+                    name="nome"
+                    type="text"
+                    placeholder="Seu nome"
+                    required>
 
-                <button class="btn principal" type="submit">Enviar mensagem</button>
-                <p id="mensagemForm" class="mensagem-form"></p>
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    required>
+
+
+                <label for="mensagem">
+                    Mensagem
+                </label>
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="5"
+                    placeholder="Como podemos ajudar?"
+                    required></textarea>
+
+
+                <button
+                    class="btn principal"
+                    type="submit">
+
+                    Enviar mensagem
+
+                </button>
+
+                <p
+                    id="mensagemForm"
+                    class="mensagem-form">
+                </p>
+
             </form>
+
         </section>
+
     </main>
 
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
     <footer>
-        <strong>Embala-Ágeis EPP - Alunos: Analice, Layane, Luana e Maicon - QualificaDF (Projeto Final)</strong>
-        <span>Embalagens que movem seu negócio.</span>
-        <span>© <span id="ano"></span> — Todos os direitos reservados.</span>
+
+        <strong>
+            Embala-Ágeis EPP -
+            Alunos: Analice, Layane, Luana e Maicon -
+            QualificaDF (Projeto Final)
+        </strong>
+
+        <span>
+            Embalagens que movem seu negócio.
+        </span>
+
+        <span>
+            © <span id="ano"></span>
+            — Todos os direitos reservados.
+        </span>
+
     </footer>
 
-    <div class="notificacao" id="notificacao" role="status"></div>
+
+    <!-- Notificação -->
+
+    <div
+        class="notificacao"
+        id="notificacao"
+        role="status">
+    </div>
+
 
 </body>
+
 </html>
